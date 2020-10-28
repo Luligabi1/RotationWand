@@ -112,7 +112,25 @@ public class RotationWandListener implements Listener {
 								p.sendMessage(MessageUtil.errorMessage(prefix, cfg.getString("rotationInvalidBlockState")));
 							}
 							break;
+						case ACACIA_FENCE_GATE:
+						case BIRCH_FENCE_GATE:
+						case DARK_OAK_FENCE_GATE:
 						case FENCE_GATE:
+						case JUNGLE_FENCE_GATE:
+						case SPRUCE_FENCE_GATE:
+							if(b.getData() == (byte) 0 || b.getData() == (byte) 2) { // X axis to Z axis
+								b.setData((byte) 1);
+							} else if(b.getData() == (byte) 1 || b.getData() == (byte) 3) { // Z axis to X axis
+								b.setData((byte) 0);
+							} else if(b.getData() == (byte) 6) { // north -> east
+								b.setData((byte) 7);
+							} else if(b.getData() == (byte) 7) { // east -> south
+								b.setData((byte) 4);
+							} else if(b.getData() == (byte) 4) { // south -> east
+								b.setData((byte) 5);
+							} else if(b.getData() == (byte) 5) { // east -> north
+								b.setData((byte) 6);
+							}
 							break;
 						case IRON_TRAPDOOR:
 						case TRAP_DOOR:
