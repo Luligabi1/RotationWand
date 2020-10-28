@@ -1,0 +1,8 @@
+name: RotationWand
+main: me.luligabi.rotationwand.RotationWand
+version: 1.0
+author: [Luligabi]
+website: https://github.com/Luligabi1/RotationWand
+commands:
+    rotationwand:
+    fancywand:

@@ -1,0 +1,46 @@
+## Generic Messages
+
+prefix: 'Rotation Wand'
+
+sucessMessage: '&9%prefix%> &7%message%'
+
+errorMessage: '&4%prefix%> &c%message%'
+
+infoMessage: '&6%prefix%> &b%message%'
+
+permissionMessage: '&4Permission> &cYou do not have permission to do this! (%permission%)'
+
+mustBePlayer: 'You must be a player to execute this command.'
+
+## Rotation Wand Meta
+
+rotationWandName: '&6Rotation Wand'
+
+rotationWandLore: '&5Right-Click a block while sneaking to rotate it!'
+
+## Rotation Wand Command
+
+rotationWandCommandSucess: 'You were given a Rotation Wand!'
+
+## Rotation Wand Messages
+
+rotationInvalidBlock: 'You cannot rotate this block!'
+
+rotationInvalidBlockState: 'You cannot rotate this item on this blockstate!'
+
+## Fancy Wand Meta
+
+fancyWandName: '&3Fancy Wand'
+
+fancyWandLore: '&5Right-Click a block while sneaking to fancy-fy it!'
+
+## Fancy Wand Command
+
+fancyWandCommandSucess: 'You were given a Fancy Wand!'
+
+## Fancy Wand Messages
+
+fancyInvalidBlock: 'You cannot fancy-fy this block!'
+
+fancyInvalidBlockState: 'You cannot fancy-fy this item on this blockstate!'
+
