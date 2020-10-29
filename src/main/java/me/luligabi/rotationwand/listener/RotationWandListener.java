@@ -2,8 +2,6 @@ package me.luligabi.rotationwand.listener;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.block.Skull;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -136,6 +134,25 @@ public class RotationWandListener implements Listener {
 						case TRAP_DOOR:
 							break;
 						case LEVER:
+							if(b.getData() == (byte) 3) {
+								b.setData((byte) 2);
+							} else if(b.getData() == (byte) 2) {
+								b.setData((byte) 4);
+							} else if(b.getData() == (byte) 4) {
+								b.setData((byte) 1);
+							} else if(b.getData() == (byte) 1) {
+								b.setData((byte) 3);
+							} else if(b.getData() == (byte) 5) {
+								b.setData((byte) 6);
+							} else if(b.getData() == (byte) 6) {
+								b.setData((byte) 5);
+							} else if(b.getData() == (byte) 7) {
+								b.setData((byte) 8);
+							} else if(b.getData() == (byte) 8) {
+								b.setData((byte) 7);
+							} else {
+								p.sendMessage(MessageUtil.errorMessage(prefix, cfg.getString("rotationInvalidBlockState")));
+							}
 							break;
 						case RAILS:
 							break;
@@ -143,18 +160,6 @@ public class RotationWandListener implements Listener {
 						case STANDING_BANNER:
 							byte currentData = b.getData();
 							b.setData(currentData == 0 ? (byte) 15 : (byte) (currentData-1), false);
-							break;
-						case SKULL:
-							Skull skull = (Skull) b.getState();
-							if(skull.getRotation() == BlockFace.NORTH) {
-								skull.setRotation(BlockFace.NORTH_EAST);
-							} else if(skull.getRotation() == BlockFace.EAST) {
-								skull.setRotation(BlockFace.SOUTH_EAST);
-							} else if(skull.getRotation() == BlockFace.SOUTH) {
-								skull.setRotation(BlockFace.SOUTH_WEST);
-							} else if(skull.getRotation() == BlockFace.WEST) {
-								skull.setRotation(BlockFace.NORTH_WEST);
-							}
 							break;
 						case TORCH: 
 						case REDSTONE_TORCH_ON: 
