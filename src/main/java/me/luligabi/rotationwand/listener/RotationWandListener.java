@@ -62,6 +62,7 @@ public class RotationWandListener implements Listener {
 						case ACTIVATOR_RAIL: 
 						case DETECTOR_RAIL: 
 						case POWERED_RAIL:
+						case RAILS:
 							if(b.getData() == (byte) 0 || b.getData() == (byte) 8) { //Z axis to X axis
 								b.setData((byte) 1, false);
 							} else if(b.getData() == (byte) 1 || b.getData() == (byte) 9) { //X axis to Z axis
@@ -155,8 +156,6 @@ public class RotationWandListener implements Listener {
 							} else {
 								p.sendMessage(MessageUtil.errorMessage(prefix, cfg.getString("rotationInvalidBlockState")));
 							}
-							break;
-						case RAILS:
 							break;
 						case SIGN_POST: 
 						case STANDING_BANNER:
