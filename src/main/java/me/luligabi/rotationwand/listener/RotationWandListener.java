@@ -133,9 +133,6 @@ public class RotationWandListener implements Listener {
 								b.setData((byte) 6);
 							}
 							break;
-						case IRON_TRAPDOOR:
-						case TRAP_DOOR:
-							break;
 						case LEVER:
 							if(b.getData() == (byte) 3) {
 								b.setData((byte) 2);
