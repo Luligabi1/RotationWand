@@ -154,6 +154,21 @@ public class RotationWandListener implements Listener {
 								p.sendMessage(MessageUtil.errorMessage(prefix, cfg.getString("rotationInvalidBlockState")));
 							}
 							break;
+						case PISTON_BASE:
+						case PISTON_STICKY_BASE:
+							if(b.getData() == (byte) 0) {
+								b.setData((byte) 1);
+							} else if(b.getData() == (byte) 1) {
+								b.setData((byte) 2);
+							} else if(b.getData() == (byte) 2) {
+								b.setData((byte) 5);
+							} else if(b.getData() == (byte) 5) {
+								b.setData((byte) 3);
+							} else if(b.getData() == (byte) 3) {
+								b.setData((byte) 4);
+							} else if(b.getData() == (byte) 4) {
+								b.setData((byte) 0);
+							} 
 						case SIGN_POST: 
 						case STANDING_BANNER:
 							byte currentData = b.getData();
